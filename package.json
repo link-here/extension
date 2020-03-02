@@ -10,8 +10,7 @@
     "test": "npm run lint",
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "prepack": "npm run build",
-    "bundle": "rollup dist/index.js --format iife --file dist/bundle.js"
+    "prepack": "npm run build"
   },
   "devDependencies": {
     "@linkhere/backend": "^0.1.0",
