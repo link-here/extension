@@ -1,0 +1,42 @@
+@import 'variables';
+
+button {
+  outline: none;
+  border: none;
+  border-radius: $border-radius;
+  transition: all $transition-duration;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button-icon {
+  border-radius: 100px;
+  height: 3rem;
+  width: 3rem;
+  font-size: 3rem;
+  line-height: 3rem;
+  padding: 0;
+  background: transparent;
+  color: darken($white, 30%);
+
+  &.small {
+    height: 2rem;
+    width: 2rem;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+
+  &:hover {
+    color: $black;
+
+    @media (prefers-color-scheme: dark) {
+      color: $white;
+    }
+  }
+
+  &.hidden {
+    visibility: hidden;
+  }
+}

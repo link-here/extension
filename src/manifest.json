@@ -1,0 +1,11 @@
+{
+  "manifest_version": 2,
+  "version": "0.1.0",
+  "name": "LinkHere",
+  "description": "Sample description",
+  "author": "Max Isom",
+  "chrome_url_overrides": {
+    "newtab": "app.html"
+  },
+  "permissions": ["storage"]
+}

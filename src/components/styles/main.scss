@@ -1,0 +1,36 @@
+@import 'lib/variables';
+@import 'lib/buttons';
+@import 'lib/forms';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $white;
+  color: $black;
+  // Taken from Bulma
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+.extension-container {
+  padding: 3rem;
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-button {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+}
