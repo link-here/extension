@@ -77,7 +77,7 @@ export default (): React.ReactElement => {
         }
       </div>
 
-      <button onClick={handlePageIncrease} className={`button-icon ${getOffset(page + 1) > links.length ? 'hidden' : ''}`}>
+      <button onClick={handlePageIncrease} className={`button-icon ${links.length > (page === 0 ? N_LINKS_DISPLAYED : getOffset(page + 1)) ? '' : 'hidden'}`}>
         <FontAwesomeIcon icon={faArrowCircleRight}/>
       </button>
     </div>
