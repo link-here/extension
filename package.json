@@ -5,12 +5,15 @@
   "author": "Max Isom <hi@maxisom.me> (https://maxisom.me/)",
   "license": "MIT",
   "scripts": {
+    "clean": "rm -rf dist artifacts",
     "lint": "eslint 'src/**/*.ts'",
     "lint-fix": "eslint 'src/**/*.t*' --fix",
     "test": "npm run lint",
     "build": "rollup -c",
     "watch": "rollup -c -w",
-    "prepack": "npm run build"
+    "dist-firefox": "web-ext sign -s dist --api-key $FIREFOX_API_KEY --api-secret $FIREFOX_API_SECRET -a artifacts",
+    "dist-universal": "web-ext build -s dist -a artifacts",
+    "dist": "npm run clean && mkdir -p artifacts && npm run build && npm run dist-universal && npm run dist-firefox"
   },
   "devDependencies": {
     "@linkhere/backend": "^0.1.0",
@@ -36,7 +39,8 @@
     "rollup-plugin-typescript2": "^0.26.0",
     "sequelize": "^5.21.5",
     "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "web-ext": "^4.1.0"
   },
   "eslintConfig": {
     "env": {

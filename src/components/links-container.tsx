@@ -57,9 +57,20 @@ export default (): React.ReactElement => {
     }
   };
 
-  const handleLinkClick = async (_: React.MouseEvent<HTMLAnchorElement>, link: Link): Promise<void> => {
+  const handleLinkClick = async (e: React.MouseEvent<HTMLAnchorElement>, link: Link): Promise<void> => {
+    e.preventDefault();
+
+    const openInNewTab = e.ctrlKey || e.shiftKey || e.metaKey || (e.button && e.button === 1);
+
     if (store('hideOnClick')) {
       await client.updateLink(link.id, {hidden: true} as Link);
+      setLinks(links.filter(l => l.id !== link.id));
+    }
+
+    if (openInNewTab) {
+      window.open(link.url, '_blank');
+    } else {
+      location.href = link.url;
     }
   };
 
