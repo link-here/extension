@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "version": "0.1.0",
   "name": "linkhere",
-  "description": "Show you webpages saved from your mobile device in new tabs.",
+  "description": "Shows you webpages saved from your mobile device in new tabs.",
   "author": "Max Isom",
   "chrome_url_overrides": {
     "newtab": "app.html"
