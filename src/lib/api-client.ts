@@ -35,9 +35,15 @@ class Client {
   }
 
   async getScreenshot(id: number): Promise<string> {
-    const res = await this.client.get(`screenshots/${id}.png`);
+    const res = await this.client.get(`screenshots/${id}`);
 
-    return URL.createObjectURL(await res.blob());
+    const b = await res.blob();
+
+    if (b.size === 0) {
+      throw new Error('Screenshot does not exist.');
+    }
+
+    return URL.createObjectURL(b);
   }
 
   private handleResponse<T>(res: APIResult<T>): T {

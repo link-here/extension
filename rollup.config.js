@@ -24,7 +24,8 @@ export default {
     copy({
       targets: [
         { src: 'src/manifest.json', dest: 'dist'},
-        { src: 'src/app.html', dest: 'dist'}
+        { src: 'src/app.html', dest: 'dist'},
+        { src: 'src/resources', dest: 'dist'}
       ]
     }),
     replace({

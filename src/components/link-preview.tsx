@@ -4,11 +4,13 @@ import APIClient from '../lib/api-client';
 import './styles/link-preview.scss';
 
 export default ({link, api, onClick}: {link: Link; api: APIClient; onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void}): React.ReactElement => {
-  const [src, setSrc] = useState('');
+  const [src, setSrc] = useState('resources/placeholder.png');
 
   useEffect(() => {
     (async () => {
-      setSrc(await api.getScreenshot(link.id));
+      try {
+        setSrc(await api.getScreenshot(link.id));
+      } catch (_) {}
     })();
   }, []);
 
