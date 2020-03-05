@@ -14,6 +14,7 @@ Motivation: I was tired of emailing myself websites that I wanted to look at lat
 - 🦊 Available for Chrome and Firefox
 - 🔒 Completely self-hosted, secure, and private (assuming HTTPS is set up)
 - 🔧 Easily extendable to other use cases
+- 🖋 Written in TypeScript
 
 ### Getting Started
 
